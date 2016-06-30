@@ -1,3 +1,5 @@
+### Notes:
+
 1. H20_Airline_ML.py contains the code to run the Gradient Boosting Algo on the Airlines dataset which is on the mapr cluster and gives out the pojo model as the output. (We can run this code anywhere as long as the H20 Cluster is running on the cluster.)
 2. The file GBM_model_python_1466696584086_1.java is the pojo model.
 3. The file h2o-genmodel.jar is the build jar containing all the dependencies of H20
