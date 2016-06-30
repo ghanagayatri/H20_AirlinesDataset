@@ -1,0 +1,14 @@
+1. H20_Airline_ML.py contains the code to run the Gradient Boosting Algo on the Airlines dataset which is on the mapr cluster and gives out the pojo model as the output. (We can run this code anywhere as long as the H20 Cluster is running on the cluster.)
+2. The file GBM_model_python_1466696584086_1.java is the pojo model.
+3. The file h2o-genmodel.jar is the build jar containing all the dependencies of H20
+4. Main.java is the file which contains the new parameters that need to be predicted using the pojo model.
+
+#### So executing the following commands:
+javac -cp h2o-genmodel.jar -J-Xmx2g -J-XX:MaxPermSize=128m GBM_model_python_1466696584086_1.java Main.java  ( Beware: This creates a bunch of .class files for all the trees it creates)
+java -cp .:h2o-genmodel.jar Main
+
+#### Gives the output as:
+Label (aka prediction) is flight departure delayed: 0    ( 0 means  “Not Delayed”)
+Class probabilities: 0.8553316150549506,0.14466838494504938
+
+So changing the parameter values in the Main.java files lets you predict for another set of values. However for the categorical values, if you give some value that is not in the training set it will throw an error.
